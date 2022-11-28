@@ -15,14 +15,8 @@ lvim.builtin.which_key.mappings["t"] = {
   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
+  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" }
 }
-
-lvim.builtin.which_key.mappings["ld"] = {
-  "<cmd>lua vim.diagnostic.open_float()<cr>", "Diagnostics (custom)"
-}
-
-lvim.builtin.which_key.mappings["lq"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Quick fix" }
 
 lvim.builtin.alpha.active = false
 lvim.builtin.notify.active = true
@@ -105,3 +99,7 @@ lvim.builtin.treesitter.rainbow.enable = true
 -- Disable bufferline
 lvim.builtin.bufferline.active = false
 vim.cmd([[ set showtabline=0 ]])
+
+-- Custom diagnostics preview
+lvim.keys.normal_mode["H"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
+lvim.keys.normal_mode["ga"] = "<cmd>lua vim.lsp.buf.code_action()<cr>"
