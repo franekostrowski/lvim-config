@@ -48,6 +48,11 @@ formatters.setup {
   }
 }
 
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
+}
+
 -- Additional Plugins
 lvim.plugins = {
   { "morhetz/gruvbox" },
