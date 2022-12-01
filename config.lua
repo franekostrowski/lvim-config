@@ -1,8 +1,6 @@
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = {
-  timeout = 2000
-}
+lvim.format_on_save = true
 lvim.colorscheme = "gruvbox"
 
 lvim.leader = "space"
@@ -103,4 +101,4 @@ vim.cmd([[ set showtabline=0 ]])
 lvim.keys.normal_mode["H"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
 lvim.keys.normal_mode["ga"] = "<cmd>lua vim.lsp.buf.code_action()<cr>"
 
-lvim.lsp.buffer_mappings.insert_mode['<Esc>'] = lvim.lsp.buffer_mappings.insert_mode['jk']
+vim.api.nvim_set_keymap("i", "jk", "<Esc>", {})
