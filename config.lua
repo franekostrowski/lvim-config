@@ -1,6 +1,5 @@
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
 lvim.colorscheme = "gruvbox"
 
 lvim.leader = "space"
@@ -40,6 +39,13 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+-- Formatting
+lvim.format_on_save = {
+  enabled = true,
+  pattern = "*",
+  timeout = 6000,
+}
+
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
@@ -56,6 +62,7 @@ linters.setup {
 -- Additional Plugins
 lvim.plugins = {
   { "morhetz/gruvbox" },
+  { "github/copilot.vim" },
   -- Git integration
   {
     "tpope/vim-fugitive",
