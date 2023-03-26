@@ -59,10 +59,11 @@ linters.setup {
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
 
+
+
 -- Additional Plugins
 lvim.plugins = {
   { "morhetz/gruvbox" },
-  { "github/copilot.vim" },
   -- Git integration
   {
     "tpope/vim-fugitive",
@@ -90,11 +91,6 @@ lvim.plugins = {
     config = function()
       require("nvim-ts-autotag").setup()
     end
-  },
-  -- Trouble
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
   },
   -- Rainbow parentheses
   {
