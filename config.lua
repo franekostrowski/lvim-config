@@ -59,11 +59,16 @@ linters.setup {
   { command = "eslint", filetypes = { "typescript", "typescriptreact" } }
 }
 
-
-
 -- Additional Plugins
 lvim.plugins = {
   { "morhetz/gruvbox" },
+  { "github/copilot.vim" },
+  {
+    "hrsh7th/cmp-copilot",
+    config = function()
+      table.insert(lvim.builtin.cmp.sources, 4, { name = "copilot" })
+    end,
+  },
   -- Git integration
   {
     "tpope/vim-fugitive",
@@ -98,6 +103,8 @@ lvim.plugins = {
   },
 }
 
+vim.g.copilot_assume_mapped = true
+
 -- Enable rainbow parentheses
 lvim.builtin.treesitter.rainbow.enable = true
 
@@ -110,3 +117,9 @@ lvim.keys.normal_mode["H"] = "<cmd>lua vim.diagnostic.open_float()<cr>"
 lvim.keys.normal_mode["ga"] = "<cmd>lua vim.lsp.buf.code_action()<cr>"
 
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", {})
+
+lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
+table.insert(lvim.builtin.cmp.sources, 2, { name = "copilot" })
+
+-- Disable next line comment
+vim.cmd([[ set formatoptions-=cro ]])
