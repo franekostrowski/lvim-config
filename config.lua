@@ -19,7 +19,6 @@ lvim.builtin.alpha.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.nvimtree.setup.open_on_setup = true
 
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
