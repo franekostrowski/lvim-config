@@ -62,15 +62,6 @@ linters.setup {
 lvim.plugins = {
   { "morhetz/gruvbox" },
   { "github/copilot.vim" },
-<<<<<<< HEAD
-=======
-  {
-    "hrsh7th/cmp-copilot",
-    config = function()
-      table.insert(lvim.builtin.cmp.sources, 4, { name = "copilot" })
-    end,
-  },
->>>>>>> 1e7cfb563ab17d88e3a26d5328cbba8164f518f6
   -- Git integration
   {
     "tpope/vim-fugitive",
@@ -122,16 +113,3 @@ vim.api.nvim_set_keymap("i", "jk", "<Esc>", {})
 
 -- Disable next line comment
 vim.cmd([[ set formatoptions-=cro ]])
-
--- Copilot
-table.insert(lvim.plugins, {
-  "zbirenbaum/copilot-cmp",
-  event = "InsertEnter",
-  dependencies = { "zbirenbaum/copilot.lua" },
-  config = function()
-    vim.defer_fn(function()
-      require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
-      require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
-    end, 100)
-  end,
-})
