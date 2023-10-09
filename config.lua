@@ -61,7 +61,6 @@ linters.setup {
 -- Additional Plugins
 lvim.plugins = {
   { "morhetz/gruvbox" },
-  { "github/copilot.vim" },
   -- Git integration
   {
     "tpope/vim-fugitive",
@@ -96,7 +95,18 @@ lvim.plugins = {
   },
 }
 
-vim.g.copilot_assume_mapped = true
+-- Copilit
+table.insert(lvim.plugins, {
+  "zbirenbaum/copilot-cmp",
+  event = "InsertEnter",
+  dependencies = { "zbirenbaum/copilot.lua" },
+  config = function()
+    vim.defer_fn(function()
+      require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+      require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+    end, 100)
+  end,
+})
 
 -- Enable rainbow parentheses
 lvim.builtin.treesitter.rainbow.enable = true
