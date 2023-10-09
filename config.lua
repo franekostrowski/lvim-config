@@ -1,4 +1,4 @@
--- general
+-- General
 lvim.log.level = "warn"
 lvim.colorscheme = "gruvbox"
 
