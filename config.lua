@@ -95,7 +95,7 @@ lvim.plugins = {
   },
 }
 
--- Copilit
+-- Copilot
 table.insert(lvim.plugins, {
   "zbirenbaum/copilot-cmp",
   event = "InsertEnter",
